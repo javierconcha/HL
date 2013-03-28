@@ -1,0 +1,30 @@
+#!/bin/bash
+
+for DIR in `cat directory_list.txt`
+do
+        
+	cd $DIR/ref/
+	echo $DIR
+	if [ " $(cat tempR.txt | wc -l)" -ne 120 ]
+        then
+                echo $DIR >> /home/jxc4005/HYDROLIGHT/HL5.1/LUT1/wronglist.txt
+        else
+
+                echo $DIR >> /home/jxc4005/HYDROLIGHT/HL5.1/LUT1/rightlist.txt
+                cat tempR.txt >> /home/jxc4005/HYDROLIGHT/HL5.1/LUT1/work/Rvector.txt
+	        CHL="$(echo $DIR | cut -d/ -f8)"
+                SM="$(echo $DIR | cut -d/ -f10)"
+                CDOM="$(echo $DIR | cut -d/ -f12)"
+                echo $CHL $SM $CDOM 
+                echo $CHL $SM $CDOM >> /home/jxc4005/HYDROLIGHT/HL5.1/LUT1/concentration_listright.txt
+
+	fi
+        let i++
+        echo $i
+
+done
+
+
+	
+
+
