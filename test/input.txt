@@ -4,12 +4,12 @@ OutputHL
 0,1,0,0,0,1
 2,1,0,2,3
 4,4
-0,fla1,fla2,fla3
+0, 0.25, 0.25, 0.25,
 0,1,440,.1,.014
 0,0,440,.1,.014
 0,0,440,.2,.014
 0,0,440,.1,.014
-/home/jxc4005/HYDROLIGHT/HL5.1/LUT1/CommonInputs/astarCHL091913.txt
+/home/jxc4005/hydrolight5Aaron_install/data/H2OabDefaults.txt
 /home/jxc4005/hydrolight5Aaron_install/data/ChloroAbs.txt
 /home/jxc4005/hydrolight5Aaron_install/data/CdomAbs.txt
 /home/jxc4005/hydrolight5Aaron_install/data/OopsSusMinAbs.txt

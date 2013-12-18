@@ -1,20 +1,24 @@
 #!/bin/bash
-
-for DIR in `cat directory_list.txt`
+rm ./work/Rvector.txt
+rm file_list.txt
+rm concentration_listright.txt
+rm wrong_list.txt
+rm right_list.txt
+find CHL/ -name "tempR.txt" > file_list.txt
+for DIR in `cat file_list.txt`
 do
-        
-	cd $DIR/ref/
 	echo $DIR
-	if [ " $(cat tempR.txt | wc -l)" -ne 120 ]
+	if [ " $(cat ./$DIR | wc -l)" -ne 120 ]
         then
-                echo $DIR >> /home/jxc4005/HYDROLIGHT/HL5.1/LUT1/wronglist.txt
+                echo ./$DIR >> /home/jxc4005/HYDROLIGHT/HL5.1/LUT1/wrong_list.txt
+		echo Warning: ./$DIR not completed yet!
         else
 
-                echo $DIR >> /home/jxc4005/HYDROLIGHT/HL5.1/LUT1/rightlist.txt
-                cat tempR.txt >> /home/jxc4005/HYDROLIGHT/HL5.1/LUT1/work/Rvector.txt
-	        CHL="$(echo $DIR | cut -d/ -f8)"
-                SM="$(echo $DIR | cut -d/ -f10)"
-                CDOM="$(echo $DIR | cut -d/ -f12)"
+                echo ./$DIR >> /home/jxc4005/HYDROLIGHT/HL5.1/LUT1/right_list.txt
+                cat ./$DIR >> /home/jxc4005/HYDROLIGHT/HL5.1/LUT1/work/Rvector.txt
+	        CHL="$(echo $DIR | cut -d/ -f2)"
+                SM="$(echo $DIR | cut -d/ -f4)"
+                CDOM="$(echo $DIR | cut -d/ -f6)"
                 echo $CHL $SM $CDOM 
                 echo $CHL $SM $CDOM >> /home/jxc4005/HYDROLIGHT/HL5.1/LUT1/concentration_listright.txt
 
